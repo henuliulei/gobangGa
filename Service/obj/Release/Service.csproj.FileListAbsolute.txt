@@ -1,0 +1,14 @@
+F:\学校的乱七八糟\MobileFile\大作业第二版_Z\大作业第一版\GobangGame\Service\bin\Service.dll.config
+F:\学校的乱七八糟\MobileFile\大作业第二版_Z\大作业第一版\GobangGame\Service\bin\Service.dll
+F:\学校的乱七八糟\MobileFile\大作业第二版_Z\大作业第一版\GobangGame\Service\bin\Service.pdb
+F:\学校的乱七八糟\MobileFile\大作业第二版_Z\大作业第一版\GobangGame\Service\obj\Release\Service.csprojResolveAssemblyReference.cache
+F:\学校的乱七八糟\MobileFile\大作业第二版_Z\大作业第一版\GobangGame\Service\obj\Release\Service.csproj.CoreCompileInputs.cache
+F:\学校的乱七八糟\MobileFile\大作业第二版_Z\大作业第一版\GobangGame\Service\obj\Release\Service.dll
+F:\学校的乱七八糟\MobileFile\大作业第二版_Z\大作业第一版\GobangGame\Service\obj\Release\Service.pdb
+C:\Users\19575\Desktop\第四版\大作业第一版\GobangGame\Service\bin\Service.dll.config
+C:\Users\19575\Desktop\第四版\大作业第一版\GobangGame\Service\bin\Service.dll
+C:\Users\19575\Desktop\第四版\大作业第一版\GobangGame\Service\bin\Service.pdb
+C:\Users\19575\Desktop\第四版\大作业第一版\GobangGame\Service\obj\Release\Service.csprojResolveAssemblyReference.cache
+C:\Users\19575\Desktop\第四版\大作业第一版\GobangGame\Service\obj\Release\Service.csproj.CoreCompileInputs.cache
+C:\Users\19575\Desktop\第四版\大作业第一版\GobangGame\Service\obj\Release\Service.dll
+C:\Users\19575\Desktop\第四版\大作业第一版\GobangGame\Service\obj\Release\Service.pdb

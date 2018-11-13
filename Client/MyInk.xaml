@@ -1,0 +1,67 @@
+﻿<RibbonWindow x:Class="Client.MyInk"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:uc="clr-namespace:Client.UserControls"
+         Height="460" Width="980" Background="#FFF0F9D8" WindowStartupLocation="CenterScreen">
+    <Grid x:Name="root">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Ribbon x:Name="ribbon" Grid.Row="0">
+            <Ribbon.Resources>
+                <Style TargetType="RibbonRadioButton">
+                    <Setter Property="LargeImageSource" Value="/images/b1.png"/>
+                    <Setter Property="SmallImageSource" Value="/images/b1.gif"/>
+                    <Setter Property="CornerRadius" Value="13"/>
+                    <Setter Property="Margin" Value="5 0 0 0"/>
+                    <EventSetter Event="Checked" Handler="RibbonRadioButton_Checked"/>
+                </Style>
+            </Ribbon.Resources>
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu x:Name="appMenu1" Visibility="Visible" ToolTip="菜单">
+                    <RibbonApplicationMenu.Resources>
+                        <Style TargetType="RibbonApplicationMenuItem">
+                            <Setter Property="ImageSource" Value="/images/b1.gif"/>
+                            <EventSetter Event="Click" Handler="RibbonApplicationMenuItem_Click"/>
+                        </Style>
+                    </RibbonApplicationMenu.Resources>
+                    <RibbonApplicationMenuItem Header="打开"/>
+                    <RibbonApplicationMenuItem Header="另存为"/>
+                    <RibbonApplicationMenuItem Header="退出"/>
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+            <RibbonTab x:Name="rt1" Header="画板1">
+                <RibbonGroup Header="笔画类型">
+                    <RibbonRadioButton x:Name="rrbPen" Label="钢笔" IsChecked="True"/>
+                    <RibbonRadioButton Label="荧光笔"/>
+                </RibbonGroup>
+                <RibbonGroup Header="钢笔颜色">
+                    <RibbonRadioButton Label="红色" IsChecked="True"/>
+                    <RibbonRadioButton Label="绿色"/>
+                    <RibbonRadioButton Label="蓝色"/>
+                </RibbonGroup>
+                <RibbonGroup Header="编辑选项">
+                    <RibbonRadioButton x:Name="rrbInk" Label="墨迹" IsChecked="True" GroupName="edit" />
+                    <RibbonRadioButton Label="手势" GroupName="edit" />
+                    <RibbonRadioButton Label="套索选择" GroupName="edit" />
+                    <RibbonRadioButton Label="点擦除" GroupName="edit" />
+                    <RibbonRadioButton Label="笔画擦除" GroupName="edit" />
+                </RibbonGroup>
+            </RibbonTab>
+            <uc:MyRibbonTab x:Name="rt2" IsSelected="False" Header="画板2"/>
+            <uc:MyRibbonTab x:Name="rt3" Header="画板3"/>
+            <uc:MyRibbonTab x:Name="rt4" Header="画板4"/>
+            <uc:MyRibbonTab x:Name="rt5" Header="画板5"/>
+            <uc:MyRibbonTab x:Name="rt6" Header="画板6"/>
+            <uc:MyRibbonTab x:Name="rt7" Header="画板7"/>
+        </Ribbon>
+        <Grid x:Name="grid1" Margin="10" Grid.Row="1" Visibility="Visible">
+            <Rectangle Grid.ColumnSpan="2" Fill="white"
+                       RadiusX="14" RadiusY="14"
+                       Stroke="Blue" StrokeDashArray="3" />
+            <Frame Name="frame1" Margin="10" BorderThickness="1" BorderBrush="Blue"
+                   NavigationUIVisibility="Hidden" />
+        </Grid>
+    </Grid>
+</RibbonWindow>

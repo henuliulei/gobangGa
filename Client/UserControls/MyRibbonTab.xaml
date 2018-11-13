@@ -1,0 +1,116 @@
+﻿<RibbonTab x:Class="Client.UserControls.MyRibbonTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <RibbonGroup Header="墨迹类型">
+        <RibbonGroup.GroupSizeDefinitions>
+            <RibbonGroupSizeDefinition>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+            </RibbonGroupSizeDefinition>
+        </RibbonGroup.GroupSizeDefinitions>
+        <RibbonRadioButton x:Name="rrbEllipseType" Label="球形" IsChecked="True"/>
+        <RibbonRadioButton Label="矩形"/>
+        <RibbonRadioButton Label="图像"/>
+        <RibbonRadioButton Label="球形序列"/>
+        <RibbonRadioButton Label="矩形序列"/>
+        <RibbonRadioButton Label="图像序列"/>
+        <RibbonRadioButton Label="直线"/>
+        <RibbonRadioButton Label="曲线"/>
+        <RibbonRadioButton Label="文字"/>
+    </RibbonGroup>
+    <RibbonGroup Header="笔尖类型">
+        <RibbonRadioButton x:Name="rrbEllipseStylus" Label="圆笔" IsChecked="True" GroupName="edit" />
+        <RibbonRadioButton Label="竖笔" GroupName="edit"/>
+        <RibbonRadioButton Label="横笔" GroupName="edit"/>
+        <RibbonRadioButton Label="钢笔" GroupName="edit"/>
+    </RibbonGroup>
+    <RibbonGroup x:Name="rgColor" Header="笔尖颜色">
+        <RibbonGroup.GroupSizeDefinitions>
+            <RibbonGroupSizeDefinition>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+            </RibbonGroupSizeDefinition>
+        </RibbonGroup.GroupSizeDefinitions>
+        <RibbonRadioButton Label="红色" x:Name="rrbRed" IsChecked="True"/>
+        <RibbonRadioButton Label="蓝色"/>
+        <RibbonRadioButton Label="绿色"/>
+    </RibbonGroup>
+    <RibbonGroup x:Name="rgWidth" Header="笔尖大小">
+        <RibbonGroup.GroupSizeDefinitions>
+            <RibbonGroupSizeDefinition>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+            </RibbonGroupSizeDefinition>
+        </RibbonGroup.GroupSizeDefinitions>
+        <RibbonRadioButton Label="2"/>
+        <RibbonRadioButton Label="6"/>
+        <RibbonRadioButton x:Name="rrbRadius" Label="12" IsChecked="True"/>
+        <RibbonRadioButton Label="18"/>
+        <RibbonRadioButton Label="24"/>
+        <RibbonRadioButton Label="30"/>
+    </RibbonGroup>
+    <RibbonGroup x:Name="rgFill" Header="填充类型">
+        <RibbonGroup.GroupSizeDefinitions>
+            <RibbonGroupSizeDefinition>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+            </RibbonGroupSizeDefinition>
+        </RibbonGroup.GroupSizeDefinitions>
+        <RibbonRadioButton x:Name="rrbLine" Label="线性渐变" IsChecked="True"/>
+        <RibbonRadioButton Label="仿射渐变"/>
+        <RibbonRadioButton Label="纯色"/>
+    </RibbonGroup>
+    <RibbonGroup Header="绘制选项">
+        <RibbonGroup.GroupSizeDefinitions>
+            <RibbonGroupSizeDefinition>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+            </RibbonGroupSizeDefinition>
+        </RibbonGroup.GroupSizeDefinitions>
+        <RibbonRadioButton x:Name="rrbAll" Label="全部" IsChecked="True"/>
+        <RibbonRadioButton Label="仅填充"/>
+        <RibbonRadioButton Label="仅轮廓"/>
+    </RibbonGroup>
+    <RibbonGroup Header="缩放选择">
+        <RibbonGroup.GroupSizeDefinitions>
+            <RibbonGroupSizeDefinition>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+            </RibbonGroupSizeDefinition>
+        </RibbonGroup.GroupSizeDefinitions>
+        <RibbonRadioButton Label="套索选择" GroupName="edit"/>
+        <RibbonRadioButton Label="全选" GroupName="edit"/>
+        <RibbonRadioButton Label="全不选" GroupName="edit"/>
+    </RibbonGroup>
+    <RibbonGroup Header="橡皮擦">
+        <RibbonGroup.GroupSizeDefinitions>
+            <RibbonGroupSizeDefinition>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+                <RibbonControlSizeDefinition ImageSize="Small"/>
+            </RibbonGroupSizeDefinition>
+        </RibbonGroup.GroupSizeDefinitions>
+        <RibbonRadioButton Label="墨迹擦除" GroupName="edit"/>
+        <RibbonRadioButton Label="笔画擦除" GroupName="edit"/>
+        <RibbonRadioButton Label="全部删除" GroupName="edit"/>
+    </RibbonGroup>
+    </RibbonTab>

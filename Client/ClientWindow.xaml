@@ -1,0 +1,135 @@
+﻿<Window x:Class="Client.ClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="网络对战斗兽棋实例" Height="473" MinHeight="473" MaxHeight="473" Width="700" AllowsTransparency="True" WindowStyle="None" BorderThickness="20">
+    <Window.Resources>
+        <Image x:Key="player1" Source="/images/daqiao.jpg"/>
+        <Image x:Key="player2" Source="/images/zhouyu.jpg"/>
+        <Image x:Key="vs" Source="/images/vs.png"/>
+    </Window.Resources>
+    <Window.Effect>
+        <DropShadowEffect Opacity="0.3" ShadowDepth="1" BlurRadius="15"/>
+    </Window.Effect>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="images/hezhao.jpg"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="103"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Margin="0,-20,0,35" Height="25" MouseDown="Rectangle_MouseDown" Grid.ColumnSpan="4"/>
+        <TextBlock Margin="0,-20,0,35" Grid.ColumnSpan="4" Height="20"  Background="White" MouseDown="Rectangle_MouseDown">
+            <Label Margin="10 -3 0 0" Content="网络对战斗兽棋" Foreground="Gray" Height="25"/>
+        </TextBlock>
+        <Button Margin="57,-18,50,41" Height="17" Style="{StaticResource ResourceKey=MyWpfButton2}" BorderBrush="White" Width="50"  Background="White" Content="—" Click="Button_Clickmini" Grid.Column="3"/>
+        <Button Margin="107,-18,0,41" Height="17" Style="{StaticResource ResourceKey=MyWpfButton2}" BorderBrush="White" Width="50" Background="White" Content="X" Click="Button_Click_1" Grid.Column="3"/>
+
+        <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Margin="5 5 0 5">
+            <TextBlock Text="用户名：" Grid.Row="2" Foreground="White" DockPanel.Dock="Left" VerticalAlignment="Center"/>
+            <TextBox x:Name="textBoxUserName" Text="西西" Width="100" VerticalAlignment="Center"/>
+            <Button Name="btnLogin" Content="登录" Click="btnLogin_Click" DockPanel.Dock="Left" Width="80"  Padding="10 0 10 0" Margin="5" Style="{StaticResource ResourceKey=MyWpfButton}"/>
+            <Button Name="btnLogout" Content="退出" Click="btnLogout_Click" DockPanel.Dock="Left" Width="80" Padding="10 0 10 0" Margin="5" Style="{StaticResource ResourceKey=MyWpfButton2}"/>
+            <TextBlock Foreground="White" Name="serviceTextBlock" Margin="5 0 0 0" VerticalAlignment="Center"/>
+        </DockPanel>
+
+        <Grid Name="gridRooms" Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0"
+                 Text="游戏大厅" Background="CadetBlue" TextAlignment="Center"/>
+            <Grid Grid.Row="1">
+                <ListBox Name="listBoxRooms"
+                 Background="AntiqueWhite" Opacity="0.65"
+                 ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+            </Grid>
+        </Grid>
+
+        <Grid Name="gridRoom" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="24"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <StackPanel Name="stackPanelRoomTip" Grid.Row="0"
+                    Background="CadetBlue" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock Name="textBlockRoomNumber" Text="房间号：" Margin="5 0 0 0"/>
+                <TextBlock Name="textBlockBlackUserName" Text="大乔：" Margin="10 0 0 0"/>
+                <TextBlock Name="textBlockWhiteUserName" Text="周瑜：" Margin="10 0 0 0"/>
+                <StackPanel Name="stackPanelGameTip" Orientation="Horizontal" Margin="20 0 0 0">
+                    <TextBlock Text="该"/>
+                    <Image Name="blackImage" Visibility="Visible" Margin="10 0 10 0" Source="images/tongnian.jpg"/>
+                    <Image Name="whiteImage" Visibility="Collapsed" Margin="10 0 0 0" Source="images/daqiao.jpg"/>
+                </StackPanel>
+            </StackPanel>
+
+            <Grid Grid.Row="1" Button.Click="Button_Click">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Style="{StaticResource ResourceKey=MyWpfButton3}"  Margin="2" Name="btn00" Grid.Column="0" Grid.Row="0"/>
+                <Button Style="{StaticResource ResourceKey=MyWpfButton3}"  Margin="2" Name="btn01" Grid.Column="1" Grid.Row="0"/>
+                <Button Style="{StaticResource ResourceKey=MyWpfButton3}"  Margin="2" Name="btn02" Grid.Column="2" Grid.Row="0"/>
+                <Button Style="{StaticResource ResourceKey=MyWpfButton3}"  Margin="2" Name="btn03" Grid.Column="3" Grid.Row="0"/>
+                <Button Style="{StaticResource ResourceKey=MyWpfButton3}"  Margin="2" Name="btn10" Grid.Column="0" Grid.Row="1"/>
+                <Button Style="{StaticResource ResourceKey=MyWpfButton3}"  Margin="2" Name="btn11" Grid.Column="1" Grid.Row="1"/>
+                <Button Style="{StaticResource ResourceKey=MyWpfButton3}"  Margin="2" Name="btn12" Grid.Column="2" Grid.Row="1"/>
+                <Button Style="{StaticResource ResourceKey=MyWpfButton3}"  Margin="2" Name="btn13" Grid.Column="3" Grid.Row="1"/>
+                <Button Style="{StaticResource ResourceKey=MyWpfButton3}"  Margin="2" Name="btn20" Grid.Column="0" Grid.Row="2"/>
+                <Button Style="{StaticResource ResourceKey=MyWpfButton3}"  Margin="2" Name="btn21" Grid.Column="1" Grid.Row="2"/>
+                <Button Style="{StaticResource ResourceKey=MyWpfButton3}"  Margin="2" Name="btn22" Grid.Column="2" Grid.Row="2"/>
+                <Button Style="{StaticResource ResourceKey=MyWpfButton3}"  Margin="2" Name="btn23" Grid.Column="3" Grid.Row="2"/>
+                <Button Style="{StaticResource ResourceKey=MyWpfButton3}"  Margin="2" Name="btn30" Grid.Column="0" Grid.Row="3"/>
+                <Button Style="{StaticResource ResourceKey=MyWpfButton3}"  Margin="2" Name="btn31" Grid.Column="1" Grid.Row="3"/>
+                <Button Style="{StaticResource ResourceKey=MyWpfButton3}"  Margin="2" Name="btn32" Grid.Column="2" Grid.Row="3"/>
+                <Button Style="{StaticResource ResourceKey=MyWpfButton3}"  Margin="2" Name="btn33" Grid.Column="3" Grid.Row="3"/>
+            </Grid>
+
+            <DockPanel Grid.Row="2" Margin="0 5 0 5">
+                <Button Style="{StaticResource ResourceKey=MyWpfButton2}" Name="btnStart" Content="准备" Click="btnStart_Click" Margin="5 0 0 0" Width="40"/>
+                <Button Style="{StaticResource ResourceKey=MyWpfButton2}" Name="btnReturn" Content="返回大厅" Click="btnReturn_Click" Margin="5 0 0 0" Width="56"/>
+                <TextBlock Text="对话：" Foreground="White" Margin="5 0 0 0" DockPanel.Dock="Left" VerticalAlignment="Center"/>
+                <Button Style="{StaticResource ResourceKey=MyWpfButton2}" Name="btnSend" Click="btnSend_Click" Content="发送" Width="40" DockPanel.Dock="Right" Margin="5 0 5 0"/>
+                <TextBox Name="textBoxTalk" KeyDown="textBoxTalk_KeyDown"/>
+            </DockPanel>
+        </Grid>
+        <Grid Name="gridMessage" Grid.Row="1" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Name="textBlockMessage" Grid.Row="0"
+                 Text="在线人数：0" Background="CadetBlue" TextAlignment="Center" Margin="0,0,0,363" Grid.RowSpan="2"/>
+            <ListBox Name="listBoxMessage"
+                     Foreground="White"
+                     FontSize="12"
+                     BorderThickness="1" Padding="0 5 0 0"
+                     ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="0,0,0,10" Grid.Row="1">
+                <ListBox.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="images/chatbackground.png"/>
+                </ListBox.Background>
+            </ListBox>
+        </Grid>
+    </Grid>
+</Window>

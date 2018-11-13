@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="UserPassword" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UserBalance" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="UserCardNumber" Type="nchar" MaxLength="18" Nullable="false" />
+    <Property Name="UserStartTime" Type="datetime" Nullable="false" />
+    <Property Name="UserPhoneNumber" Type="nchar" MaxLength="11" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="MyDatabaseModelStoreContainer">
+    <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

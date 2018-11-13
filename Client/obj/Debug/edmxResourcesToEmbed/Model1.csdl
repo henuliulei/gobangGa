@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="UserPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserBalance" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserCardNumber" Type="String" MaxLength="18" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="UserStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UserPhoneNumber" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="MyDatabaseEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UserInfo" EntityType="Self.UserInfo" />
+  </EntityContainer>
+</Schema>
